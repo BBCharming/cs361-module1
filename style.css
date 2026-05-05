@@ -1,0 +1,223 @@
+/* 0. Declaring Custom Variables as Root*/
+:root
+{
+    /*Color variables*/
+    --neon-blue: #1F51FF;
+    --negro: #0d0f0e;
+    --vanilla: #e8ffe8;
+    --neon-green: #2dfa6e;
+    --accent: #00c9a7;
+    --primary-color: #1F51FF;
+    /*Spacing variables*/
+    --base-padding: 1rem;
+    --base-margin: 1rem;
+    --selection-gap: 2rem;
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2.5rem;
+    /*Other design tokens*/
+    --regular-font-family: "Instrument Serif", serif;
+    --baskervville-font-family: "Baskervville", serif;
+    --zilla-font-family: "Zilla Slab", serif;
+    --titillium-font-family: "Titillium Web", sans-serif;
+    --anonymous-pro-font-family: "Anonymous Pro", monospace;
+    --tinos-font-family: "Tinos", serif;
+    --share-tech-font-family: "Share Tech", sans-serif;
+    --font-size0: 1rem;
+    --font-size1: 1.1rem;
+    --font-size2: 1.5rem;
+    --font-size3: 2.4rem;
+    --line-height0: 1.7;
+    --border-radius-small: 4px;
+    --border-radius-large: 12px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 1. Box-sizing && reset */
+*, *::before, *::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: var(--zilla-font-family);
+    font-size: var(--font-size0);
+    line-height: var(--line-height0);
+    color: var(--vanilla);
+    background-color: var(--negro);
+    padding: 16px;
+    margin: 16px;
+}
+
+/* 2. Typography scale */
+h1
+{
+    font-size: var(--font-size3);
+    color: var(--vanilla);
+    font-weight: bold;
+}
+
+h2
+{
+    font-size: var(--font-size2);
+    color: var(--primary-color);
+}
+
+h3
+{
+    font-size: var(--font-size1);
+}
+
+p
+{
+    margin-bottom: var(--base-margin);
+    line-height: var(--line-height0);
+}
+
+a
+{
+    text-decoration: none;
+    color: var(--neon-green);
+    transition: color 0.3s ease;
+}
+
+a:hover
+{
+    color: var(--neon-blue);
+}
+
+/* Element selectors */
+h2
+{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Class selectors */
+.profile-figure
+{
+    margin: var(--space-md);
+    text-align: center;
+}
+
+.skills-list
+{
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Advanced selectors */
+nav a:hover
+{
+    border-bottom-color: var(--neon-green);
+    color: var(--neon-green);
+}
+
+section h2::before
+{
+    content: "* ";
+    color: var(--neon-green);
+    font-weight: bold;
+}
+
+section h2::after
+{
+    content: " *";
+    color: var(--neon-green);
+}
+
+/* Header and navigation */
+header
+{
+    background: linear-gradient(to right, var(--neon-blue), var(--accent));
+    padding: var(--space-lg);
+    color: var(--vanilla);
+}
+
+nav
+{
+    display: flex;
+    gap: var(--space-lg);
+}
+
+nav a
+{
+    color: var(--vanilla);
+    text-decoration: none;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+/* Card sections */
+section
+{
+    background-color: #111111;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--box-shadow);
+    border-left: 5px solid var(--neon-green);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+/* Profile photo */
+.profile-figure img
+{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--neon-blue);
+    transition: transform 0.3s ease;
+}
+
+.profile-figure img:hover
+{
+    transform: scale(1.1);
+}
+
+/* Skills and lists */
+.skills-list li
+{
+    display: inline-block;
+    background-color: var(--neon-blue);
+    color: var(--vanilla);
+    padding: 5px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.skills-list li:hover
+{
+    background-color: var(--neon-green);
+    color: var(--negro);
+}
+
+/* Layout */
+main
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl) 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+aside
+{
+    background-color: #111111;
+    padding: var(--space-md);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--box-shadow);
+    height: fit-content;
+}
